@@ -1,6 +1,6 @@
 import React from 'react'
 
-import LoginImage from '../../assets/hamburger.svg'
+import LoginImg from '../../assets/hamburgerComFundo.jpg'
 import Logo from '../../assets/LogoImage.svg'
 import {
   Container,
@@ -8,13 +8,14 @@ import {
   Label,
   Input,
   Button,
-  SignInLink
+  SignInLink,
+  LoginImage
 } from './styles'
 
 function Login() {
   return (
     <Container>
-      <LoginImage src={LoginImage} alt="login-image" />
+      <LoginImage src={LoginImg} alt="login-image" />
       <ContainerItens>
         <img src={Logo} alt="logo-burger" />
         <h1>Login</h1>
