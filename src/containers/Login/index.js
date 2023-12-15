@@ -1,7 +1,7 @@
 import React from 'react'
 
 import LoginImg from '../../assets/hamburgerComFundo.jpg'
-import Logo from '../../assets/LogoImage.svg'
+
 import {
   Container,
   ContainerItens,
@@ -12,28 +12,33 @@ import {
   LoginImage
 } from './styles'
 
+
 function Login() {
   return (
     <Container>
       <LoginImage src={LoginImg} alt="login-image" />
       <ContainerItens>
-        <img src={Logo} alt="logo-burger" />
+        
         <h1>Login</h1>
+        <h2>Welcome back!</h2>
 
         <Label>Email</Label>
 
         <Input />
 
-        <Label>Senha</Label>
+        <Label>Password</Label>
 
         <Input />
-
-        <input type="checkbox" id="Remember me" />
-
-        <Button>Signin</Button>
+        
+        <label>
+          <input type="checkbox" className="Remember_me"/>
+          <span>Remember me</span>
+        </label>
+        
+        <Button>Sign In</Button>
 
         <SignInLink>
-          Não possui conta ? <a>Signup</a>
+          Don´t have an account? <a>Sign Up</a>
         </SignInLink>
 
       </ContainerItens>
