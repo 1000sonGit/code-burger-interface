@@ -84,6 +84,7 @@ export const Input = styled.input`
     height: 35px;
     border-radius: 5px;
     padding-left: 10px;
+    border: ${ props => (props.error ? '2px solid #cc1717' : 'none')};
     
 `
 
@@ -105,6 +106,7 @@ export const Button = styled.button`
 
     &:hover {
         opacity: 0.8;
+        border: 3px solid blue;
     }
 
     &:active {
@@ -130,4 +132,12 @@ export const SignInLink = styled.p`
 
     }
 
+`
+export const ErrorMessage = styled.p`
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: yellow;
+    margin-top: 2px;
 `

@@ -1,7 +1,11 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import * as Yup from 'yup'
+import { yupResolver } from "@hookform/resolvers/yup"
 
 import LoginImg from '../../assets/hamburgerComFundo.jpg'
+
+import api from '../../services/api'
 
 import {
   Container,
@@ -10,18 +14,32 @@ import {
   Input,
   Button,
   SignInLink,
-  LoginImage
+  LoginImage,
+  ErrorMessage
 } from './styles'
 
 
 function Login() {
+  const schema = Yup.object().shape({
+    email: Yup.string().email("Please, enter a valid email address").required("Email is a required field"),
+    password: Yup.string("Password is a required field").required().min(6, "Password must have at least 6 characters")
+  })
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
 
-  const onSubmit = data => console.log(data)
+  const onSubmit = async clientData => {
+    const response = await api.post('sessions', {
+      email: clientData.email,
+      password: clientData.password,
+      checked: clientData.checked
+    })
+  }
 
   return (
     <Container>
@@ -35,11 +53,17 @@ function Login() {
         <form onSubmit={handleSubmit(onSubmit)}>
           <Label>Email</Label>
 
-          <Input type="email" {... register("email")}/>
+          <Input noValidate type="email" 
+          {... register("email")} 
+          error={errors.email?.message}/>
+          <ErrorMessage>{errors.email?.message}</ErrorMessage>
 
           <Label>Password</Label>
 
-          <Input type= "password" {... register("password")}/>
+          <Input type= "password" 
+          {... register("password")} 
+          error={errors.password?.message}/>
+          <ErrorMessage>{errors.password?.message}</ErrorMessage>
           
           <label>
             <input type="checkbox" className="Remember_me" {... register("checked")}/>
