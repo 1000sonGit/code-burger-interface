@@ -22,40 +22,37 @@ export const ContainerItens = styled.div`
     height: 80%;
     padding: 15px 75px;
     display: flex;
-    flex-direction: column;    
-    justify-content: space-between;    
+    flex-direction: column;
+    justify-content: space-between;
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
 
     h1 {
         width: 141px;
         height: 48px;
-
-        margin-top: 92px;
-
-        /* font-family: Poppins !important; */
+        margin-top: 92px;        
         color: white;        
         font-size: 36px;
         font-weight: 700;
         line-height: 54px;
         letter-spacing: 0em;
         text-align: left;
-
     }
 
-    h2 {
-        /* font-family: Poppins !important; */
+    h2 {        
         color: white;
         width: 113px;
         height: 21px;
         margin-top: 8px;
         margin-bottom: 46px;
-
         font-weight: 700;        
         font-size: 14px;
         line-height: 21px;
         letter-spacing: 0em;
         text-align: left;
-
-
     }
 
     img {
@@ -101,7 +98,7 @@ export const Button = styled.button`
     border-radius: 25px;
     background: #9758A6;
     color: white;
-    border: none;
+    border: 3px solid white;
     cursor: pointer;
     margin-top: 24px;
     margin-bottom: 25px;

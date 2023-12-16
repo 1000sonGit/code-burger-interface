@@ -31,8 +31,9 @@ module.exports = {
 
   rules: {
     camelcase: 'off',
-    'no-console': 'error',    
-    '@typescript-eslint/no-var-requires': 'off',
+    "no-console": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
     'node/no-unsupported-features/es-syntax': [
       'error',
       { ignores: ['modules'] },
@@ -60,7 +61,7 @@ module.exports = {
       parser: '@typescript-eslint/parser',
       files: ['*.ts'],
       extends: ['plugin:@typescript-eslint/recommended'],
-      rules: {
+      rules: {        
         'node/no-unsupported-features/es-syntax': [
           'error',
           { ignores: ['modules'] }
