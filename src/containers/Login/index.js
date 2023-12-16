@@ -11,12 +11,13 @@ import {
   Container,
   ContainerItens,
   Label,
-  Input,
-  Button,
+  Input,  
   SignInLink,
   LoginImage,
   ErrorMessage
 } from './styles'
+
+import Button from '../../components/Button'
 
 
 function Login() {
@@ -70,7 +71,7 @@ function Login() {
             <span>Remember me</span>
           </label>
           
-          <Button type="submit">Sign In</Button>
+          <Button type="submit" style={{ marginTop: 24, marginBottom: 25 }}>Sign In</Button>
         </form>
         
         <SignInLink>
