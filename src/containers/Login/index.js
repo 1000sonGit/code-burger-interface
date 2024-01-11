@@ -1,8 +1,10 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 import { yupResolver } from "@hookform/resolvers/yup"
 
+import { userUser} from '../../hooks/UserContext'
 import LoginImg from '../../assets/hamburgerComFundo.jpg'
 
 import api from '../../services/api'
@@ -21,6 +23,8 @@ import Button from '../../components/Button'
 
 
 function Login() {
+  const {putUserData, userData} = userUser()
+
   const schema = Yup.object().shape({
     email: Yup.string().email("Please, enter a valid email address").required("Email is a required field"),
     password: Yup.string("Password is a required field").required().min(6, "Password must have at least 6 characters")
@@ -35,12 +39,23 @@ function Login() {
   });
 
   const onSubmit = async clientData => {
-    const response = await api.post('sessions', {
+    const { data } = await toast.promise(
+    api.post('sessions', {
       email: clientData.email,
-      password: clientData.password,
-      checked: clientData.checked
-    })
-  }
+      password: clientData.password
+      // checked: clientData.checked
+    }),
+      {
+        pending: 'Checking...',
+        sucess: 'Welcome!',
+        error: 'Something wrong, try again!'
+      }
+    
+    )
+
+    putUserData(data)
+    
+    }  
 
   return (
     <Container>

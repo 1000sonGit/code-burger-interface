@@ -1,5 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 import { yupResolver } from "@hookform/resolvers/yup"
 
@@ -37,13 +38,33 @@ function Register() {
   });
 
   const onSubmit = async clientData => {
-    const response = await api.post('sessions', {
-      name: clientData.name,
-      email: clientData.email,
-      password: clientData.password,
-      confirmPassword: clientData.password,
-      checked: clientData.checked
-    })
+    try{
+    const { status } = await api.post(
+      'users', 
+      {
+        name: clientData.name,
+        email: clientData.email,
+        password: clientData.password,
+        confirmPassword: clientData.password
+        // checked: clientData.checked
+      }, 
+      { validateStatus: () => true }
+      )
+
+      if(status == 201 || status == 200){
+        toast.success('Registration completed successfully')
+
+      }
+      else if(status == 409){
+        toast.error('Email already exists! Use another email')
+      }
+      else {
+        throw new Error()
+      }
+    
+    } catch (err) {
+      toast.error('System failure! Try again')
+    }
   }
 
   return (
@@ -94,7 +115,7 @@ function Register() {
         </form>
         
         <SignInLink>
-          Do you already have a account? <a>Login here</a>
+          Do you already have an account? <a>Login here</a>
         </SignInLink>
 
       </ContainerItens>
