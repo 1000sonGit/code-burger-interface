@@ -51,11 +51,11 @@ function Register() {
       { validateStatus: () => true }
       )
 
-      if(status == 201 || status == 200){
+      if(status === 201 || status === 200){
         toast.success('Registration completed successfully')
 
       }
-      else if(status == 409){
+      else if(status === 409){
         toast.error('Email already exists! Use another email')
       }
       else {

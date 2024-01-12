@@ -4,7 +4,7 @@ import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 import { yupResolver } from "@hookform/resolvers/yup"
 
-import { userUser} from '../../hooks/UserContext'
+import { useUser} from '../../hooks/UserContext'
 import LoginImg from '../../assets/hamburgerComFundo.jpg'
 
 import api from '../../services/api'
@@ -23,7 +23,7 @@ import Button from '../../components/Button'
 
 
 function Login() {
-  const {putUserData, userData} = userUser()
+  const { putUserData } = useUser()
 
   const schema = Yup.object().shape({
     email: Yup.string().email("Please, enter a valid email address").required("Email is a required field"),
