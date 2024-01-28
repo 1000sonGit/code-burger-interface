@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 import { yupResolver } from "@hookform/resolvers/yup"
+import { Link } from 'react-router-dom'
 
 import { useUser} from '../../hooks/UserContext'
 import LoginImg from '../../assets/hamburgerComFundo.jpg'
@@ -90,7 +91,7 @@ function Login() {
         </form>
         
         <SignInLink>
-          Don´t have an account? <a>Sign Up</a>
+          Don´t have an account? <Link style={{color: 'white'}} to="/cadastro">Sign Up</Link>
         </SignInLink>
 
       </ContainerItens>
