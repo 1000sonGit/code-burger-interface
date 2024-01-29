@@ -3,9 +3,10 @@ import styled from "styled-components"
 
 export const Container = styled.div`
 `
-export const FirstContainer = styled.div`    
+export const FirstContainer = styled.div`
     display: grid;
     grid-template-columns: 50% 50%;
+    margin-left: 20px;
     
 `
 
