@@ -1,22 +1,17 @@
 import styled from "styled-components"
-import blackBackground from '../../assets/Vector 1 black_background.svg'
+
 
 export const Container = styled.div`
 `
-export const FirstContainer = styled.div`
-    background-color: white;
-    background-image: url("${blackBackground}");
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: 100vw 230px;
+export const FirstContainer = styled.div`    
     display: grid;
-    grid-template-columns: 50% 50%;    
+    grid-template-columns: 50% 50%;
     
 `
 
 export const HomeImg = styled.img`
     width: 60%;
-    height: 230px;
+    height: minmax(230px 100vh);
 
 `
 export const DescriptiveContainer = styled.div`    
@@ -24,12 +19,13 @@ export const DescriptiveContainer = styled.div`
     height: minmax(20% 230px);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
 
     .DescriptiveTitle {
         font-weight: 400;
         font-family: 'Playball', cursive;
         font-style: italic;
+        font-size: 48px;
     }
 
     .LocalTitle {        
@@ -43,6 +39,7 @@ export const DescriptiveContainer = styled.div`
 
     .Description {
         font-weight: 400;
+        font-size: 19px;
     }
 `
 
