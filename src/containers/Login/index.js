@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 import { yupResolver } from "@hookform/resolvers/yup"
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 import { useUser} from '../../hooks/UserContext'
 import LoginImg from '../../assets/hamburgerComFundo.jpg'
@@ -24,6 +24,7 @@ import Button from '../../components/Button'
 
 
 function Login() {
+  const history = useHistory()
   const { putUserData } = useUser()
 
   const schema = Yup.object().shape({
@@ -55,6 +56,11 @@ function Login() {
     )
 
     putUserData(data)
+    // Após o login, direciona para a home após 2 segundos
+    setTimeout(() => {
+      history.push('/')
+    }, 2000);
+
     
     }  
 
