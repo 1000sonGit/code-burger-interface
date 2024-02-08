@@ -1,7 +1,6 @@
 import React from "react"
 
 import HomeLogo from '../../assets/HomeLogo.svg'
-// import blackBackground from '../../assets/Vector 1 black_background.svg'
 
 import { Container, FirstContainer, DescriptiveContainer, HomeImg} from './styles'
 import CategoryCarousel from "../../components/CategoryCarousel"
