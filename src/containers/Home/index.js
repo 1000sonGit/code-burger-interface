@@ -1,11 +1,9 @@
 import React from "react"
 
 import HomeLogo from '../../assets/HomeLogo.svg'
-
-import { Container, FirstContainer, DescriptiveContainer, HomeImg} from './styles'
-import CategoryCarousel from "../../components/CategoryCarousel"
-
 import Button from '../../components/Button'
+import CategoryCarousel from "../../components/CategoryCarousel"
+import { Container, FirstContainer, DescriptiveContainer, HomeImg} from './styles'
 
 function Home() {
     

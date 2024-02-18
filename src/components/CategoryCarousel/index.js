@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react"
+import Carousel from 'react-elastic-carousel'
 
 import api from '../../services/api'
-import { Container, CategoryImg } from './styles'
-import Carousel from 'react-elastic-carousel'
+import { Container, ContainerItens, Image, Button} from './styles'
+
 
 function CategoryCarousel() {
     const [categories, setCategories] = useState([])
@@ -11,7 +12,7 @@ function CategoryCarousel() {
         async function loadCategories() {
             const { data } = await api.get('categories')
 
-            setCategories(data)
+            setCategories(data)            
         }
 
         loadCategories()
@@ -26,13 +27,14 @@ function CategoryCarousel() {
     ]
 
     return (
-        <Container>
-            <Carousel itemsToShow={5} style={{width: '90%'}} breakPoints={breakpoints}>
+        <Container>            
+
+            <Carousel itemsToShow={3} style={{width: '90%'}} breakPoints={breakpoints}>
                 {  categories && categories.map( category => (
-                        <div key={category.id}>
-                            <img src={category.url} alt='foto da categoria'/>
-                            <button>{category.name}</button>
-                        </div>
+                        <ContainerItens key={category.id}>
+                            <Image src={category.url} alt="foto da categoria"/>
+                            <Button>{category.name}</Button>
+                        </ContainerItens>
                     ))
                 }
             </Carousel>
