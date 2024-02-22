@@ -5,17 +5,19 @@ import api from '../../services/api'
 import { Container, ContainerItens, Image, Button} from './styles'
 
 
-function CategoryCarousel() {
-    const [categories, setCategories] = useState([])
+function OffersCarousel() {
+    const [offers, setOffers] = useState([])
 
     useEffect(() => {
-        async function loadCategories() {
-            const { data } = await api.get('categories')
+        async function loadOffers() {
+            const { data } = await api.get('products')
 
-            setCategories(data)            
+            const onlyOffers = data.filter(products => products.offer)
+
+            setOffers(onlyOffers)            
         }
 
-        loadCategories()
+        loadOffers()
     }, [])
     // De acordo com a largura, quantos itens pararecem na tela
     const breakpoints = [
@@ -28,13 +30,15 @@ function CategoryCarousel() {
 
     return (
         <Container>            
-            <p className='Categories'>Categories</p>
-            
+            <p className='Offer'>Offers</p>
+
             <Carousel itemsToShow={3} style={{width: '90%'}} breakPoints={breakpoints}>
-                {  categories && categories.map( category => (
-                        <ContainerItens key={category.id}>
-                            <Image src={category.url} alt="foto da categoria"/>
-                            <Button>{category.name}</Button>
+                {  offers && offers.map( products => (
+                        <ContainerItens key={products.id}>
+                            <Image src={products.url} alt="foto do produto"/>
+                            <p>{products.name}</p>
+                            <p>{products.price}</p>
+                            <Button>Order Now</Button>
                         </ContainerItens>
                     ))
                 }
@@ -44,4 +48,4 @@ function CategoryCarousel() {
 )
 }
 
-export default CategoryCarousel
+export default OffersCarousel

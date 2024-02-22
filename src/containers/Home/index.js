@@ -3,6 +3,7 @@ import React from "react"
 import HomeLogo from '../../assets/HomeLogo.svg'
 import Button from '../../components/Button'
 import CategoryCarousel from "../../components/CategoryCarousel"
+import OffersCarousel from "../../components/OffersCarousel"
 import { Container, FirstContainer, DescriptiveContainer, HomeImg} from './styles'
 
 function Home() {
@@ -17,8 +18,9 @@ function Home() {
                     <Button type="submit" style={{ marginTop: 24, marginBottom: 25 }}>Order Now</Button>
                 </DescriptiveContainer>
                 <HomeImg src={HomeLogo} alt="home's logo"/>                
-            </FirstContainer>                       
+            </FirstContainer>                                   
             <CategoryCarousel />
+            <OffersCarousel />
         </Container>
 
 )
