@@ -17,7 +17,7 @@ export const LoginImage = styled.img`
 `
 
 export const ContainerItens = styled.div`
-    background: rgba(111, 111, 111);
+    background: #373737;
     border-radius: 0 10px 10px 0;
     height: 80%;
     padding: 15px 75px;
@@ -28,23 +28,21 @@ export const ContainerItens = styled.div`
     form {
         display: flex;
         flex-direction: column;
+        margin: 0px 70px;
     }
 
     h1 {
-        width: 141px;
-        height: 48px;
-        margin-top: 92px;        
+        height: 48px;       
         color: white;        
         font-size: 36px;
         font-weight: 700;
         line-height: 54px;
         letter-spacing: 0em;
-        text-align: left;
+        text-align: center;
     }
 
     h2 {        
         color: white;
-        width: 113px;
         height: 21px;
         margin-top: 8px;
         margin-bottom: 46px;
@@ -52,7 +50,7 @@ export const ContainerItens = styled.div`
         font-size: 14px;
         line-height: 21px;
         letter-spacing: 0em;
-        text-align: left;
+        text-align: center;
     }
 
     img {
@@ -67,7 +65,11 @@ export const ContainerItens = styled.div`
         margin-left: 10px;        
         color: white;
         font-weight: 400;
-    }   
+    }
+    
+    .CodeImg {
+        margin: 80px 70px;
+    }
         
 `
 
@@ -75,7 +77,8 @@ export const Label = styled.p`
     color: white;
     width: 176px;
     height: 18px;
-    margin-top: 23px; 
+    margin-top: 23px;
+    margin-bottom: 6px;
 
 `
 
@@ -90,7 +93,7 @@ export const Input = styled.input`
 
 export const SignInLink = styled.p`
     color: white;    
-    margin-bottom: 69px;
+    margin: 0px 70px 10px 70px;
 
     a {
         color: white;

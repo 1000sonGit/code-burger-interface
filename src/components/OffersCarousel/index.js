@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import Carousel from 'react-elastic-carousel'
 
 import api from '../../services/api'
+import formatCurrency from '../../utils/formatCurrency'
 import { Container, ContainerItens, Image, Button} from './styles'
 
 
@@ -13,7 +14,10 @@ function OffersCarousel() {
             const { data } = await api.get('products')
 
             const onlyOffers = data.filter(products => products.offer)
-
+            // .map(products => {
+            //     return { formatedPrice: formatCurrency(products.price, ...products ) }
+            // })
+            
             setOffers(onlyOffers)            
         }
 
@@ -37,7 +41,8 @@ function OffersCarousel() {
                         <ContainerItens key={products.id}>
                             <Image src={products.url} alt="foto do produto"/>
                             <p>{products.name}</p>
-                            <p>{products.price}</p>
+                            <p>{formatCurrency(products.price)}</p>
+                            {/* <p>{products.formatedPrice}</p> */}
                             <Button>Order Now</Button>
                         </ContainerItens>
                     ))

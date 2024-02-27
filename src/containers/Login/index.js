@@ -7,6 +7,7 @@ import { Link, useHistory } from 'react-router-dom'
 
 import { useUser} from '../../hooks/UserContext'
 import LoginImg from '../../assets/hamburgerComFundo.jpg'
+import CodeClubImage from '../../assets/CodeClubBurger.png'
 
 import api from '../../services/api'
 
@@ -69,6 +70,8 @@ function Login() {
       <LoginImage src={LoginImg} alt="login-image" />
       <ContainerItens>
         
+        <img src={CodeClubImage} className='CodeImg'/>
+
         <h1>Login</h1>
 
         <h2>Welcome back!</h2>

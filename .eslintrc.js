@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  parser: '@typescript-eslint/parser',
+  parser: '@typescript-eslint/parser',     
   env: {
     browser: true,
     node: true,
@@ -26,7 +26,7 @@ module.exports = {
       tryExtensions: ['.js', '.json', '.node', '.ts', '.d.ts']
     }
   },
-
+  
   plugins: [ '@typescript-eslint', 'eslint-plugin-import-helpers', 'react', 'react-hooks', 'prettier', 'node'],
 
   rules: {
