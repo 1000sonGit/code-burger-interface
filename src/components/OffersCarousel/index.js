@@ -12,13 +12,15 @@ function OffersCarousel() {
     useEffect(() => {
         async function loadOffers() {
             const { data } = await api.get('products')
-
-            const onlyOffers = data.filter(products => products.offer)
-            // .map(products => {
-            //     return { formatedPrice: formatCurrency(products.price, ...products ) }
-            // })
             
-            setOffers(onlyOffers)            
+            const onlyOffers = data.filter(products => products.offer)
+            .map(products => {
+                return { formatedPrice: formatCurrency(products.price), 
+                         name:products.name,
+                         url:products.url }
+            })                    
+            
+            setOffers(onlyOffers)
         }
 
         loadOffers()
@@ -40,9 +42,8 @@ function OffersCarousel() {
                 {  offers && offers.map( products => (
                         <ContainerItens key={products.id}>
                             <Image src={products.url} alt="foto do produto"/>
-                            <p>{products.name}</p>
-                            <p>{formatCurrency(products.price)}</p>
-                            {/* <p>{products.formatedPrice}</p> */}
+                            <p>{products.name}</p>                            
+                            <p>{products.formatedPrice}</p>
                             <Button>Order Now</Button>
                         </ContainerItens>
                     ))
