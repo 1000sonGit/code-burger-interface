@@ -21,10 +21,10 @@ import {
   ErrorMessage
 } from './styles'
 
-import Button from '../../components/Button'
+import {Button} from '../../components'
 
 
-function Login() {
+export function Login() {
   const history = useHistory()
   const { putUserData } = useUser()
 
@@ -108,4 +108,3 @@ function Login() {
   )
 }
 
-export default Login

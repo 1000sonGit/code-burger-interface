@@ -19,10 +19,10 @@ import {
   ErrorMessage
 } from './styles'
 
-import Button from '../../components/Button'
+import {Button} from '../../components'
 
 
-function Register() {
+export function Register() {
   const schema = Yup.object().shape({
     name: Yup.string("Enter with your name").required("Name is a required field"),
     email: Yup.string().email("Please, enter a valid email address").required("Email is a required field"),
@@ -123,5 +123,3 @@ function Register() {
     </Container>
   )
 }
-
-export default Register
