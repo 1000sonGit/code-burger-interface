@@ -13,11 +13,14 @@ export const Container = styled.div`
         display:flex;
         flex-direction: column;
         justify-content: space-between;
+        width: 180px;
+        height: 202px;
     }
 `
 
 export const Image = styled.img`
-    width: 150px;
+    height: 200px;
+    width: 200px;
     border-radius: 10px;
 `
 
@@ -26,6 +29,7 @@ export const ProductName = styled.p`
     font-weight: normal;
     font-size: 16px;
     line-height: 19px;
+    word-break: break-word;
 
     color: #000000;
 `
