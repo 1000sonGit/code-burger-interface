@@ -24,6 +24,7 @@ export function Products() {
                 return { price: product.price, 
                          name: product.name,
                          url: product.url,
+                         id: product.id,
                          category_id: product.category_id }})            
             setProducts(newProducts)
         }
