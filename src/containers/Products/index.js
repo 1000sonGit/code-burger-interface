@@ -21,11 +21,13 @@ export function Products() {
             const { data: allProducts } = await api.get('products')
             
             const newProducts = allProducts.map(product => {
-                return { price: product.price, 
-                         name: product.name,
-                         url: product.url,
-                         id: product.id,
-                         category_id: product.category_id }})            
+                return { ... product
+                        // price: product.price, 
+                        //  name: product.name,
+                        //  url: product.url,
+                        //  id: product.id,
+                        //  category_id: product.category_id 
+                        }})            
             setProducts(newProducts)
         }
         loadProducts()

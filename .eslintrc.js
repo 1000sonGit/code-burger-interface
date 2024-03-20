@@ -23,6 +23,7 @@ module.exports = {
 
   settings: {
     node: {
+      version: '18.16.0',
       tryExtensions: ['.js', '.json', '.node', '.ts', '.d.ts']
     }
   },
@@ -36,7 +37,8 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": "warn",
     'node/no-unsupported-features/es-syntax': [
       'error',
-      { ignores: ['modules'] },
+      { version: '>=18.16.0',
+        ignores: ['modules'] },
     ],
     
     'import-helpers/order-imports': [
@@ -64,7 +66,8 @@ module.exports = {
       rules: {        
         'node/no-unsupported-features/es-syntax': [
           'error',
-          { ignores: ['modules'] }
+          { version: '>=18.16.0',
+            ignores: ['modules']}
         ]
       }
     }

@@ -15,9 +15,9 @@ export function OffersCarousel() {
             
             const onlyOffers = data.filter(products => products.offer)
             .map(products => {
-                return { formatedPrice: formatCurrency(products.price), 
-                         name:products.name,
-                         url:products.url }
+                return { formatedPrice: formatCurrency(products.price), ...products}
+                        //  name:products.name,
+                        //  url:products.url }
             })                    
             
             setOffers(onlyOffers)
