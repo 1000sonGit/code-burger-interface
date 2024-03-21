@@ -23,7 +23,7 @@ export const Header = styled.div`
 
 export const Body = styled.div`
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, minmax(150px, auto));
     width: max-content;
     grid-gap: 10px 15px;
     padding: 10px;
@@ -36,7 +36,12 @@ export const Body = styled.div`
 
     p {
         font-size: 16px;
-        color: #000000;
+        color: #000000;        
+    }
+
+    .name-container {
+        width: 120px;
+        word-break: break-word;
     }
 
     .quantity-container {
