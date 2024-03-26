@@ -46,7 +46,6 @@ export function Login() {
     api.post('sessions', {
       email: clientData.email,
       password: clientData.password
-      // checked: clientData.checked
     }),
       {
         pending: 'Checking...',
