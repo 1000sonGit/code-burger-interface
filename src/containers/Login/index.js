@@ -58,7 +58,12 @@ export function Login() {
     putUserData(data)
     // Após o login, direciona para a home após 2 segundos
     setTimeout(() => {
-      history.push('/')
+      if (data.admin){
+        history.push('/orders')
+      } else {
+        history.push('/')
+      }
+      
     }, 2000);
 
     
