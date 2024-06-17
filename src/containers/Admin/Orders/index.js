@@ -15,6 +15,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 import api from "../../../services/api"
+import Row from "./row"
 import { Container } from "./styles"
 
 
@@ -39,7 +40,7 @@ function Orders() {
           orderId: order._id,
           date: order.createdAt,
           status: order.status,
-          product: order.products          
+          products: order.products          
         }
       }
 
@@ -55,16 +56,15 @@ function Orders() {
                     <TableHead>
                     <TableRow>
                         <TableCell />
-                        <TableCell>Dessert (100g serving)</TableCell>
-                        <TableCell align="right">Calories</TableCell>
-                        <TableCell align="right">Fat&nbsp;(g)</TableCell>
-                        <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-                        <TableCell align="right">Protein&nbsp;(g)</TableCell>
+                        <TableCell>Order</TableCell>
+                        <TableCell>Consumer</TableCell>
+                        <TableCell>Order Date</TableCell>
+                        <TableCell>Status</TableCell>
                     </TableRow>
                     </TableHead>
                     <TableBody>
                     {rows.map((row) => (
-                        <Row key={row.name} row={row} />
+                        <Row key={row.id} row={row} />
                     ))}
                     </TableBody>
                 </Table>
