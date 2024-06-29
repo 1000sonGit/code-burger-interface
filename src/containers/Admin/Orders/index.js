@@ -10,20 +10,24 @@ import Paper from '@mui/material/Paper';
 
 
 import api from "../../../services/api"
+import status from "./order-status";
 import formatDate from "../../../utils/formatDate"
 import Row from "./row"
-import { Container } from "./styles"
+import { Container, Menu, LinkMenu } from "./styles"
 
 
 function Orders() {
     const [orders, setOrders] = useState([])
+    const [activeStatus, setActiveStatus] = useState(1)
+    const [filteredOrders, setfilteredOrders] = useState([])
     const [rows, setRows] = useState([])
 
     useEffect(() => {
         async function loadOrders() {
             const { data } = await api.get('orders')
             
-            setOrders(data)            
+            setOrders(data)
+            setfilteredOrders(data)
         }
         
         loadOrders()
@@ -41,12 +45,42 @@ function Orders() {
       }
 
     useEffect(() => {
-        const newRows = orders.map( ord => createData(ord))
+        const newRows = filteredOrders.map( ord => createData(ord))
         setRows(newRows)
+    }, [filteredOrders])
+
+    useEffect(() => {
+        if(activeStatus === 1){
+            setfilteredOrders(orders)
+        } else{
+        const statusIndex = status.findIndex( sts => sts.id === activeStatus)        
+        const newFilteredOrders = orders.filter( order => order.status === status[statusIndex].value)            
+        setfilteredOrders(newFilteredOrders)
+        } 
     }, [orders])
+
+    function handleStatus(status) {
+        if (status.id === 1) {
+            setfilteredOrders(orders)            
+        } else {
+            const newOrders = orders.filter( order => order.status === status.value)
+            setfilteredOrders(newOrders)
+        }
+        setActiveStatus(status.id)
+
+    }
 
     return (
         <Container>
+            <Menu>
+                { status && status.map( status => (
+                    <LinkMenu key={status.id} 
+                    onClick={() => handleStatus(status)}
+                    isActiveStatus={activeStatus === status.id}>
+                        { status.label }
+                    </LinkMenu>
+                ))}
+            </Menu>
             <TableContainer component={Paper}>
                 <Table aria-label="collapsible table">
                     <TableHead>
@@ -60,7 +94,12 @@ function Orders() {
                     </TableHead>
                     <TableBody>
                     {rows.map((row) => (
-                        <Row key={row.orderId} row={row} />
+                        <Row 
+                        key={row.orderId} 
+                        row={row}
+                        setOrders={setOrders}
+                        orders={orders}
+                        />
                     ))}
                     </TableBody>
                 </Table>
