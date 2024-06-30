@@ -4,7 +4,6 @@ import ReactSelect from "react-select"
 export const Container = styled.div`
     background: #EFEFEF;
     min-height: 100vh;
-    padding: 20px;
 `
 export const ProductsImg = styled.img`
     width: 60px;
@@ -16,14 +15,12 @@ export const ReactSelectStyle = styled(ReactSelect)`
         cursor: pointer;
     }    
 `
-
 export const Menu = styled.div`
     display: flex;
     gap: 50px;
     justify-content: center;
     margin: 20px 0;
 `
-
 export const LinkMenu = styled.a`
     color: #323d5d;
     cursor: pointer;
