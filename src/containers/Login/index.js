@@ -17,11 +17,10 @@ import {
   Label,
   Input,  
   SignInLink,
-  LoginImage,
-  ErrorMessage
+  LoginImage
 } from './styles'
 
-import {Button} from '../../components'
+import {Button, ErrorMessage} from '../../components'
 
 
 export function Login() {

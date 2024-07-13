@@ -20,7 +20,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-
+  
   settings: {
     node: {
       version: '18.16.0',

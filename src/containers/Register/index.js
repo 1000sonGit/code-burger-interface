@@ -15,11 +15,10 @@ import {
   Label,
   Input,  
   SignInLink,
-  RegisterImage,
-  ErrorMessage
+  RegisterImage  
 } from './styles'
 
-import {Button} from '../../components'
+import {Button, ErrorMessage} from '../../components'
 
 
 export function Register() {
