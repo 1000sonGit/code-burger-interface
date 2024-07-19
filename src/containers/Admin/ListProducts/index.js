@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import api from "../../../services/api"
-
+import { useHistory } from "react-router-dom";
 import { Container, Img, EditIconStyles } from './styles'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -12,9 +12,11 @@ import Paper from '@mui/material/Paper';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import formatCurrency from "../../../utils/formatCurrency";
+import paths from "../../../constants/paths";
 
 function ListProducts() {
     const [ products, setProducts] = useState()
+    const { push } = useHistory()
 
     useEffect(() => {
         async function loadOrders() {
@@ -29,6 +31,10 @@ function ListProducts() {
             return <CheckBoxIcon/>
         }
         return <CheckBoxOutlineBlankIcon/>
+    }
+
+    function editProduct(product) {
+        push(paths.EditProduct, { product })
     }
 
     return (
@@ -54,7 +60,7 @@ function ListProducts() {
                         <TableCell>{formatCurrency(product.price)}</TableCell>
                         <TableCell align="center">{isOffer(product.offer)}</TableCell>
                         <TableCell align="center"><Img src={product.url} alt='product image'/></TableCell>
-                        <TableCell><EditIconStyles/></TableCell>                        
+                        <TableCell><EditIconStyles onClick={() => editProduct(product)}/></TableCell>
                         </TableRow>
                     ))}
                     </TableBody>
