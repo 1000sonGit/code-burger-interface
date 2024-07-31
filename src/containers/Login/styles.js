@@ -12,18 +12,20 @@ export const Container = styled.div`
 `
 
 export const LoginImage = styled.img`
-    height: 80%;
+    height: 762px;    
     border-radius: 10px 0 0 10px;
+    justify-content: space-between;
+    box-sizing: border-box;
 `
 
 export const ContainerItens = styled.div`
     background: #373737;
-    border-radius: 0 10px 10px 0;
-    height: 80%;
+    border-radius: 0 10px 10px 0;    
     padding: 15px 75px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-sizing: border-box;
 
     form {
         display: flex;

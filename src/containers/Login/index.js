@@ -1,13 +1,13 @@
+import { yupResolver } from "@hookform/resolvers/yup"
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { Link, useHistory } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import * as Yup from 'yup'
-import { yupResolver } from "@hookform/resolvers/yup"
-import { Link, useHistory } from 'react-router-dom'
 
-import { useUser} from '../../hooks/UserContext'
 import LoginImg from '../../assets/hamburgerComFundo.jpg'
 import CodeClubImage from '../../assets/CodeClubBurger.png'
+import { useUser} from '../../hooks/UserContext'
 
 import api from '../../services/api'
 
@@ -38,33 +38,38 @@ export function Login() {
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
-  });
+  })
 
   const onSubmit = async clientData => {
-    const { data } = await toast.promise(
-    api.post('sessions', {
-      email: clientData.email,
-      password: clientData.password
-    }),
-      {
-        pending: 'Checking...',
-        sucess: 'Welcome!',
-        error: 'Something wrong, try again!'
-      }
     
-    )
-
-    putUserData(data)
-    // Após o login, direciona para a home após 2 segundos
-    setTimeout(() => {
-      if (data.admin){
-        history.push('/orders')
-      } else {
-        history.push('/')
-      }
+    try {
+      const { data } = await api.post('sessions', {
+        email: clientData.email,
+        password: clientData.password
+      })
+      toast.success('Welcome!')      
+      putUserData(data)
+      // Após o login, direciona para a home após 2 segundos
+      setTimeout(() => {
+        if (data.admin){
+          history.push('/orders')
+        } else {
+          history.push('/')
+        }
       
-    }, 2000);
-
+      }, 2000);
+    } catch (err) {
+      toast.error('Something wrong, try again!', {
+        position: 'top-right',
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      }
+      )
+    }
     
     }  
 
