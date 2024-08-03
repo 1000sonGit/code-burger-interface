@@ -108,7 +108,7 @@ export function Login() {
         </form>
         
         <SignInLink>
-          Don´t have an account? <Link style={{color: 'white'}} to="/cadastro">Sign Up</Link>
+          Don´t have an account? <Link style={{color: 'white'}} to="/register">Sign Up</Link>
         </SignInLink>
 
       </ContainerItens>

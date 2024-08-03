@@ -12,18 +12,20 @@ export const Container = styled.div`
 `
 
 export const RegisterImage = styled.img`
-    height: 80%;
+    height: 690px;    
     border-radius: 10px 0 0 10px;
+    box-sizing: border-box;
 `
 
 export const ContainerItens = styled.div`
     background: rgba(111, 111, 111);
     border-radius: 0 10px 10px 0;
-    height: 80%;
+    height: 690px;
     padding: 15px 75px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-sizing: border-box;
 
     form {
         display: flex;
@@ -87,7 +89,8 @@ export const Label = styled.p`
     color: white;
     width: 176px;
     height: 18px;
-    margin-top: ${ props => (props.error ? '12px' : '28px')};
+    /* margin-top: ${ props => (props.error ? '12px' : '28px')}; */
+    margin-top: 12px;
     margin-bottom: 3px;
 
 `

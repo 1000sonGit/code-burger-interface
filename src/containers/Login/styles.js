@@ -12,7 +12,8 @@ export const Container = styled.div`
 `
 
 export const LoginImage = styled.img`
-    height: 762px;    
+    height : 762px;
+    min-height: auto;    
     border-radius: 10px 0 0 10px;
     justify-content: space-between;
     box-sizing: border-box;
@@ -20,12 +21,13 @@ export const LoginImage = styled.img`
 
 export const ContainerItens = styled.div`
     background: #373737;
+    height : 762px;
     border-radius: 0 10px 10px 0;    
     padding: 15px 75px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-sizing: border-box;
+    box-sizing: border-box;    
 
     form {
         display: flex;
@@ -47,7 +49,7 @@ export const ContainerItens = styled.div`
         color: white;
         height: 21px;
         margin-top: 8px;
-        margin-bottom: 46px;
+        margin-bottom: 20px;
         font-weight: 700;        
         font-size: 14px;
         line-height: 21px;
@@ -70,7 +72,7 @@ export const ContainerItens = styled.div`
     }
     
     .CodeImg {
-        margin: 80px 70px;
+        margin: 80px 70px;        
     }
         
 `
@@ -79,7 +81,7 @@ export const Label = styled.p`
     color: white;
     width: 176px;
     height: 18px;
-    margin-top: 23px;
+    margin-top: 16px;
     margin-bottom: 6px;
 
 `
@@ -89,14 +91,13 @@ export const Input = styled.input`
     height: 35px;
     border-radius: 5px;
     padding-left: 10px;
-    border: ${ props => (props.error ? '2px solid #cc1717' : 'none')};
-    
+    border: ${ props => (props.error ? '2px solid #cc1717' : 'none')};    
 `
 
 export const SignInLink = styled.p`
     color: white;    
     margin: 0px 70px 10px 70px;
-
+    
     a {
         color: white;
         text-decoration: underline;

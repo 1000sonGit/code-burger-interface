@@ -111,7 +111,7 @@ export function Register() {
             <a>Term & Conditions</a>
           </label>
           
-          <Button type="submit" style={{ marginTop: 24, marginBottom: 25 }}>Sign Un</Button>
+          <Button type="submit" style={{ marginTop: 24, marginBottom: 25 }}>Sign Up</Button>
         </form>
         
         <SignInLink>
