@@ -42,7 +42,7 @@ export function OffersCarousel() {
         <Container>            
             <p className='Offer'>Offers</p>
 
-            <Carousel itemsToShow={3} style={{width: '90%'}} breakPoints={breakpoints}>
+            <Carousel itemsToShow={3} style={{width: '800px'}} breakPoints={breakpoints}>
                 {  offers && offers.map( products => (
                         <ContainerItens key={products.id}>
                             <Image src={products.url} alt="foto do produto"/>

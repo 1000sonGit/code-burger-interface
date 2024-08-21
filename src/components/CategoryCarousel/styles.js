@@ -8,7 +8,7 @@ export const Container = styled.div`
     align-items: center;
     gap: 35px;
     padding: 35px 0;
-
+    
     .rec.rec-arrow {
         background-color: #9758A6;
         color: #efefef;
@@ -29,18 +29,18 @@ export const Container = styled.div`
     }
 
     .Categories {
-        display: flex;
+        display: block;
         flex-direction: column;
         font-size: 64px;
         font-weight: 500;
         line-height: 75px;    
         text-align: center;
-
+        
         width: 412px;
         height: 71px;
         top: 676px;
         left: 514px;
-
+        
         color: white;
         -webkit-text-stroke-width: 3px;
         -webkit-text-stroke-color: #9758A6;
@@ -51,7 +51,7 @@ export const ContainerItens = styled.div`
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    
+        
 `
 
 export const Image = styled.img`

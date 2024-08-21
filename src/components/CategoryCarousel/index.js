@@ -30,7 +30,7 @@ export function CategoryCarousel() {
         <Container>            
             <p className='Categories'>Categories</p>
             
-            <Carousel itemsToShow={3} style={{width: '90%'}} breakPoints={breakpoints}>
+            <Carousel itemsToShow={3} style={{width: '800px'}} breakPoints={breakpoints}>
                 {  categories && categories.map( category => (
                         <ContainerItens key={category.id}>
                             <Image src={category.url} alt="foto da categoria"/>

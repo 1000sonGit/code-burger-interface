@@ -86,7 +86,7 @@ export function Register() {
 
           <Label error={errors.email?.message}>Email</Label>
 
-          <Input noValidate type="email" 
+          <Input noValidate type="email"
           {... register("email")} 
           error={errors.email?.message}/>
           <ErrorMessage>{errors.email?.message}</ErrorMessage>
