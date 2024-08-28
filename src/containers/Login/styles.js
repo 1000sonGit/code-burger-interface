@@ -47,7 +47,7 @@ export const ContainerItens = styled.div`
     form {
         display: flex;
         flex-direction: column;
-        margin: 0 5vw;
+        margin: 0 8%;
     }
 
     h1 {
@@ -151,7 +151,7 @@ export const Input = styled.input`
 
 export const SignInLink = styled.p`
     color: white;
-    margin: 0 5vw 10px;
+    margin: 0 8% 10px;
     text-align: center;
 
     a {

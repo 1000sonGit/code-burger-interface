@@ -29,20 +29,23 @@ export function OffersCarousel() {
 
         loadOffers()
     }, [])
-    // De acordo com a largura, quantos itens pararecem na tela
-    const breakpoints = [
-        { width:1, itensToShow: 1},
-        { width:400, itensToShow: 2},
-        { width:600, itensToShow: 3},
-        { width:900, itensToShow: 4},
-        { width:1300, itensToShow: 5}
+    // De acordo com a largura, quantos itens aparecem na tela
+    const breakPoints = [
+        { width:1, itemsToShow: 1},
+        { width:400, itemsToShow: 2},
+        { width:600, itemsToShow: 3},
+        { width:900, itemsToShow: 4},
+        { width:1300, itemsToShow: 5}
     ]
 
     return (
         <Container>            
             <p className='Offer'>Offers</p>
 
-            <Carousel itemsToShow={3} style={{width: '800px'}} breakPoints={breakpoints}>
+            <Carousel 
+                // itemsToShow={4} 
+                // style={{width: '800px'}} 
+                breakPoints={breakPoints}>
                 {  offers && offers.map( products => (
                         <ContainerItens key={products.id}>
                             <Image src={products.url} alt="foto do produto"/>
