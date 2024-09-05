@@ -2,18 +2,20 @@ import styled from "styled-components"
 
 
 export const Container = styled.div`
-    background: #e5e5e5;
-    min-height: calc(100vh - 72px);
+    background: #e5e5e5;       
+    width: 100vw;
 `
 
 export const ProductsImg = styled.img`
-    width: 100%;
+    width: 100vw;
+    height: auto;
 `
 export const CategoriesMenu = styled.div`
     display: flex;
     justify-content: center;
-    gap: 50px;
-    margin-top: 20px;
+    margin: 20px 2px 0px 2px;
+    justify-content: space-around;
+    width: 100vw;
 `
 
 export const CategoryButton = styled.button`
@@ -28,10 +30,32 @@ export const CategoryButton = styled.button`
 `
 
 export const ProductsContainer = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: grid;    
     gap: 20px;
-    padding: 40px;
-    justify-items: center;
+    padding: 40px 5px;
+    justify-items: center;    
     margin-top: 20px;
+    width: 100vw;
+
+    /* Definindo o layout padrão para telas pequenas */
+    grid-template-columns: 1fr;
+
+    /* Ajustando o layout para telas maiores */
+    @media (min-width: 800px) {
+        /* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
+        grid-template-columns: repeat(2, 1fr);
+        gap:10px;        
+    }
+
+    @media (min-width: 1200px) {
+        /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
+        grid-template-columns: repeat(3, 1fr);
+        gap:5px;
+    }
+
+    @media (min-width: 1600px) {
+        /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
+        grid-template-columns: repeat(4, 1fr);
+        gap:5px;
+    }
 `

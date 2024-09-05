@@ -12,22 +12,25 @@ import {Button} from "../Button"
 
 import { Container, Image, ProductName, ProductPrice } from "./styles"
 
-
+import { GlobalStyle } from "../Button/styles"
 export function CardProduct({ product }){
     const { putProductInCart } = useCart()
     const { push } = useHistory()
     return (
-        <Container>
-            <Image src={product.url} alt='product´s image'/>
-            <div>
-                <ProductName>{product.name}</ProductName>
-                <ProductPrice>{formatCurrency(product.price)}</ProductPrice>
-                <Button onClick={ () => {
-                    putProductInCart(product)
-                    push('/cart')
-                    }}>Adicionar</Button>
-            </div>
-        </Container>
+        <>
+            <GlobalStyle/>
+            <Container>
+                <Image src={product.url} alt='product´s image'/>
+                <div>
+                    <ProductName>{product.name}</ProductName>
+                    <ProductPrice>{formatCurrency(product.price)}</ProductPrice>
+                    <Button onClick={ () => {
+                        putProductInCart(product)
+                        push('/cart')
+                        }}>Adicionar</Button>
+                </div>
+            </Container>
+        </>
     )
 }
 

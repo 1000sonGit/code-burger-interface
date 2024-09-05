@@ -42,7 +42,7 @@ export function OffersCarousel() {
         <Container>            
             <p className='Offer'>Offers</p>
 
-            <Carousel 
+            <Carousel
                 // itemsToShow={4} 
                 // style={{width: '800px'}} 
                 breakPoints={breakPoints}>

@@ -9,7 +9,7 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     padding: 20px;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 
     @media screen and (max-width: 770px){
         min-width: 320px;
@@ -26,7 +26,7 @@ export const LoginImage = styled.img`
     height: 762px;
     width: auto;
     border-radius: 10px 0 0 10px;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 
     @media screen and (max-width: 770px) {
         display: none;
@@ -42,7 +42,7 @@ export const ContainerItens = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 
     form {
         display: flex;
@@ -86,12 +86,12 @@ export const ContainerItens = styled.div`
         margin-right: auto;
     }
 
-    @media screen and (max-width: 770px) {
+    @media screen and (max-width: 770px) {        
         padding: 20px 0;        
         min-width: 320px;
         min-height: 568px;
-        border-radius: 10px;
-        box-sizing: border-box;
+        border-radius: 10px;        
+        /* box-sizing: border-box; */
 
         .CodeImg {
             width: auto;
@@ -111,7 +111,7 @@ export const ContainerItens = styled.div`
         padding: 20px;
 
         .CodeImg {
-            width: 100%;
+            width: auto;
             height: auto;
             margin: 20px 0;
         }
@@ -137,7 +137,7 @@ export const Input = styled.input`
     border: ${props => (props.error ? '2px solid #cc1717' : 'none')};
 
     @media screen and (max-width: 770px) {
-        width: 100%;
+        width: auto;
         height: clamp(10px, 35px, 60px);
         padding: 0;
     }

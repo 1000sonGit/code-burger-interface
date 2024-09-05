@@ -7,24 +7,34 @@ export const Container = styled.div`
     display: flex;
     gap: 12px;
     padding: 16px;
-    width: max-content;
+    width: 98vw;
 
     div {
         display:flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 180px;
+        min-width: min-content;
         height: 202px;
+    }
+    @media screen and (min-width: 400px){
+        width: 360px;
     }
 `
 
 export const Image = styled.img`
-    height: 200px;
-    width: 200px;
+    --debug: 200px;
+    height: var(--debug);
+    width: var(--debug);
     border-radius: 10px;
+
+    @media screen and (max-width:400px){
+        --debug: 160px;
+    }
 `
 
 export const ProductName = styled.p`
+    
+    width: var(--button-width);
     font-size: normal;
     font-weight: normal;
     font-size: 16px;
@@ -32,6 +42,8 @@ export const ProductName = styled.p`
     word-break: break-word;
 
     color: #000000;
+
+    
 `
 
 export const ProductPrice = styled.p`
