@@ -49,9 +49,9 @@ export function Header() {
                 </PageLink>
                 <ContainerText>
                     <p>
-                        Olá, {userData.name}
+                        Hello, {userData.name}
                     </p>
-                    <PageLinkExit onClick={logoutUser}>Sair</PageLinkExit>
+                    <PageLinkExit onClick={logoutUser}>Log out</PageLinkExit>
                 </ContainerText>
             </ContainerRight>            
         </Container>

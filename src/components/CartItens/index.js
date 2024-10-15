@@ -10,19 +10,21 @@ export function CartItens() {
     return (
         <Container>
             <Header>
-                <p></p>
-                <p>Order Details</p>
-                <p>Price</p>
-                <p style={{ paddingRight: 30 }}>Quantity</p>
+                {/* <p className="empty-space"></p> */}
+                <p className="order-header">Order Details</p>
+                <p className="price-header">Price</p>
+                <p>Quantity</p>
                 <p>Total</p>
             </Header>
 
             {cartProducts && cartProducts.length > 0 ? (
                 cartProducts.map( product => (
                     <Body key={product.id}>
-                        <img src={product.url}/>
-                        <p className="name-container">{product.name}</p>
-                        <p>{formatCurrency(product.price)}</p>
+                        <div className="item-group">
+                            <img src={product.url}/>
+                            <p className="name-container">{product.name}</p>
+                        </div>
+                        <p className="price-container">{formatCurrency(product.price)}</p>
                         <div className="quantity-container">
                             <button onClick={() => decreaseProducts(product.id)}>-</button>
                             <p>{product.quantity}</p>
