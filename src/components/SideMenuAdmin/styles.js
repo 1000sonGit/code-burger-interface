@@ -8,8 +8,30 @@ export const Container = styled.div`
     top: 0;
     left: 0;
 
+    .vertical-line{
+        display: none;        
+    }
+
     hr {
         margin: 50px 15px;
+    }
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        width: calc(100vw - 10px);
+        justify-content: center;
+
+        .vertical-line {
+            display: flex;
+            border-left: 1px solid #ffffff;
+            border-right: 1px solid #ffffff;
+            height: 60px;            
+            margin: 1px 2px;
+        }
+
+        hr {
+            display: none;
+        }
     }
 `
 
@@ -26,6 +48,11 @@ export const ItemContainer = styled.div`
     .icon {
         color: #ffffff;        
     }
+
+    @media (max-width: 768px){
+        padding: 0 1px;
+        margin: 2px;               
+    }
 `
 
 export const ListLink = styled(Link)`
@@ -36,4 +63,8 @@ export const ListLink = styled(Link)`
     color: #ffffff;
     text-decoration: none;
     margin-left: 8px;
+
+    @media (max-width: 768px){
+        font-size: 10.5px;                
+    }
 `

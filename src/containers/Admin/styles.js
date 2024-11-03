@@ -3,11 +3,16 @@ import styled from "styled-components"
 export const Container = styled.div`
     display: flex;
     min-height: 100vh;
-    width: 100vw;
+    min-width: 100vw;
     background: #efefefef;
     justify-content: flex-start;
+
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;        
+    }
 `
 export const ContainerItens = styled.div`
     padding: 20px;
-    width: 100%;
+    width: 100vw;
 `

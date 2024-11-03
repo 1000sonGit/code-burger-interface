@@ -1,7 +1,7 @@
-const formatDate = date => {   
+const shortformatDate = date => {   
   
     return new Date(date).toLocaleDateString('pt-Br', {
-        year: '2-digit',
+        
         month: '2-digit',
         day: '2-digit',
         hour: '2-digit',
@@ -9,4 +9,4 @@ const formatDate = date => {
     })
 }
 
-export default formatDate
+export default shortformatDate

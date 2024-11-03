@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { useMediaQuery } from "@mui/material";
 
 
 import api from "../../../services/api"
@@ -14,6 +15,7 @@ import status from "./order-status";
 import formatDate from "../../../utils/formatDate"
 import Row from "./row"
 import { Container, Menu, LinkMenu } from "./styles"
+import shortformatDate from "../../../utils/shortformatDate";
 
 
 function Orders() {
@@ -21,6 +23,7 @@ function Orders() {
     const [activeStatus, setActiveStatus] = useState(1)
     const [filteredOrders, setfilteredOrders] = useState([])
     const [rows, setRows] = useState([])
+    const isSmallScreen = useMediaQuery('(max-width:800px)')
 
     useEffect(() => {
         async function loadOrders() {
@@ -33,21 +36,23 @@ function Orders() {
         loadOrders()
     }, [])
 
+    // Function to format date based on screen size
+    function formatDateBasedOnScreen(order) {
+        return isSmallScreen ? shortformatDate(order.createdAt) : formatDate(order.createdAt);
+    }
 
-    function createData(order) {
-        return {
-          name: order.user.name,
-          orderId: order._id,
-          date: formatDate(order.createdAt),
-          status: order.status,
-          products: order.products          
-        }
-      }
-
+    // Create data for each order with formatted date
     useEffect(() => {
-        const newRows = filteredOrders.map( ord => createData(ord))
-        setRows(newRows)
-    }, [filteredOrders])
+        const newRows = filteredOrders.map((ord) => ({
+        name: ord.user.name,
+        orderId: ord._id,
+        date: formatDateBasedOnScreen(ord),
+        status: ord.status,
+        products: ord.products,
+        }));
+        setRows(newRows);
+    }, [filteredOrders, isSmallScreen]) 
+    // Update rows on filteredOrders or screen size change
 
     useEffect(() => {
         if(activeStatus === 1){
