@@ -27,7 +27,7 @@ export function CardProduct({ product }){
                     <Button onClick={ () => {
                         putProductInCart(product)
                         push('/cart')
-                        }}>Adicionar</Button>
+                        }}>Add</Button>
                 </div>
             </Container>
         </>
