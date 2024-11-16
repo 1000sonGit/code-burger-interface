@@ -36,7 +36,7 @@ export const ContainerItens = styled.div`
     background: rgba(111, 111, 111);
     border-radius: 0 10px 10px 0;
     height: 762px;
-    padding: 15px 75px;
+    width: 340px;    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -98,7 +98,27 @@ export const ContainerItens = styled.div`
     }
 
     }
-        
+
+    @media screen and (max-width: 770px) {        
+        padding: 20px 0;        
+        min-width: 320px;
+        min-height: 568px;
+        border-radius: 10px;        
+
+        form {
+            margin: 0 5px;
+        }
+    }
+
+    @media screen and (max-width: 320px) and (max-height: 568px) {
+        height: auto;
+        width: 100%;        
+        padding: 20px;        
+
+        form {
+            margin: 0 10px;
+        }
+    }
 `
 
 export const Label = styled.p`
