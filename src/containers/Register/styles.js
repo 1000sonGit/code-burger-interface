@@ -57,7 +57,7 @@ export const ContainerItens = styled.div`
         font-weight: 700;
         line-height: 54px;
         letter-spacing: 0em;
-        text-align: left;
+        text-align: center;
     }
 
     h2 {        
@@ -70,7 +70,7 @@ export const ContainerItens = styled.div`
         font-size: 14px;
         line-height: 21px;
         letter-spacing: 0em;
-        text-align: left;
+        text-align: center;
     }
 
     img {
