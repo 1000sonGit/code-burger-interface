@@ -49,27 +49,17 @@ export const ContainerItens = styled.div`
     }
 
     h1 {
-        width: 141px;
-        height: 48px;
-        margin-top: 10px;        
-        color: white;        
-        font-size: 36px;
+        color: white;
+        font-size: 2.5rem;
         font-weight: 700;
-        line-height: 54px;
-        letter-spacing: 0em;
         text-align: center;
     }
 
     h2 {        
         color: white;
-        width: 169px;
-        height: 21px;
-        margin-top: 8px;
-        margin-bottom: 10px;
-        font-weight: 700;        
-        font-size: 14px;
-        line-height: 21px;
-        letter-spacing: 0em;
+        margin: 8px 0 20px;
+        font-weight: 700;
+        font-size: 1rem;
         text-align: center;
     }
 
@@ -155,7 +145,8 @@ export const Input = styled.input`
 
 export const SignInLink = styled.p`
     color: white;    
-    margin-bottom: 69px;
+    margin: 0 8% 10px;
+    text-align: center;
 
     a {
         color: white;
