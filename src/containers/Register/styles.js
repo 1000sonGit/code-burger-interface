@@ -35,7 +35,7 @@ export const RegisterImage = styled.img`
 export const ContainerItens = styled.div`
     background: rgba(111, 111, 111);
     border-radius: 0 10px 10px 0;
-    height: 690px;
+    height: 762px;
     padding: 15px 75px;
     display: flex;
     flex-direction: column;
