@@ -112,7 +112,8 @@ export const Label = styled.p`
 `
 
 export const Input = styled.input`
-    width: 349px;
+    width: 100%;
+    max-width: 349px;
     height: 35px;
     border-radius: 5px;
     padding-left: 10px;
