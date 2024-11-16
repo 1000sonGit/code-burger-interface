@@ -9,12 +9,27 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 770px){
+        min-width: 320px;
+        min-height: 568px;
+    }
+
+    @media screen and (max-width: 320px) and (max-height: 568px) {
+        min-width: 320px;
+        min-height: 568px;        
+    }
 `
 
 export const RegisterImage = styled.img`
-    height: 690px;    
+    height: 762px;
+    width: auto;    
     border-radius: 10px 0 0 10px;
     box-sizing: border-box;
+
+    @media screen and (max-width: 770px) {
+        display: none;
+    }
 `
 
 export const ContainerItens = styled.div`
@@ -25,11 +40,12 @@ export const ContainerItens = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 
     form {
         display: flex;
         flex-direction: column;
+        margin: 0 8%;
     }
 
     h1 {
@@ -101,6 +117,18 @@ export const Input = styled.input`
     border-radius: 5px;
     padding-left: 10px;
     border: ${ props => (props.error ? '2px solid #cc1717' : 'none')};
+
+    @media screen and (max-width: 770px) {
+        width: auto;
+        height: clamp(10px, 35px, 60px);
+        padding: 0;
+    }
+
+    @media screen and (max-width: 320px) and (max-height: 568px) {
+        width: 100%;
+        height: 35px;
+        padding: 0 10px;
+    }
     
 `
 
@@ -120,4 +148,11 @@ export const SignInLink = styled.p`
 
     }
 
+    @media screen and (max-width: 320px) and (max-height: 568px) {
+        margin: 0 10px 10px;
+
+        a {
+            margin-left: 10px;
+        }
+    }
 `
