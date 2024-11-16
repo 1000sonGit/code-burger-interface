@@ -27,7 +27,7 @@ export const RegisterImage = styled.img`
     border-radius: 10px 0 0 10px;
     box-sizing: border-box;
 
-    @media screen and (max-width: 770px) {
+    @media screen and (max-width: 900px) {
         display: none;
     }
 `
