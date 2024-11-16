@@ -40,6 +40,7 @@ export const ContainerItens = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 20px;
     /* box-sizing: border-box; */
 
     form {
@@ -102,8 +103,7 @@ export const ContainerItens = styled.div`
 
     @media screen and (max-width: 320px) and (max-height: 568px) {
         height: auto;
-        width: 100%;        
-        padding: 20px;        
+        width: 100%;                
 
         form {
             margin: 0 10px;
